@@ -3,7 +3,6 @@
     <declare-styleable name="LoadingButton">
         <attr name="backgroundColor" format="color" />
         <attr name="LoadingBackgroundColor" format="color" />
-        <attr name="buttColor3" format="color" />
         <attr name="iconLoadingColor" format="color" />
     </declare-styleable>
 </resources>
