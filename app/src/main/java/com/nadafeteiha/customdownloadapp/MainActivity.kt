@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
             if (downloadStatus.isDownloadCompleted(intent, downloadID)) {
                 status = downloadStatus.getDownloadStatus(intent)
             }
-            binding.layout.customButton.setButState(ButtonState.Completed)
+            binding.layout.customButton.updateButtonState(ButtonState.Completed)
             Snackbar.make(findViewById(android.R.id.content), status.name, Snackbar.LENGTH_LONG).show()
             notificationManager.sendNotification(fileName, this@MainActivity, status)
         }
@@ -91,7 +91,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
             val url = getSelectedURL()
             url?.let {
                 download(url)
-                binding.layout.customButton.setButState(ButtonState.Loading)
+                binding.layout.customButton.updateButtonState(ButtonState.Loading)
             } ?: Snackbar.make(
                 findViewById(android.R.id.content),
                 R.string.option_not_selected,

@@ -5,7 +5,6 @@ import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
-import android.util.Log
 import android.view.View
 import android.view.animation.AccelerateInterpolator
 import android.view.animation.DecelerateInterpolator
@@ -78,7 +77,7 @@ class LoadingButton @JvmOverloads constructor(
                 buttonText = context.getString(R.string.button_download_complete)
                 buttonAnimator.end()
                 iconCircleAnimator.end()
-                setButState(ButtonState.Clicked)
+                updateButtonState(ButtonState.Clicked)
 
             }
             else -> {
@@ -93,7 +92,7 @@ class LoadingButton @JvmOverloads constructor(
         }
     }
 
-    fun setButState(state: ButtonState) {
+    fun updateButtonState(state: ButtonState) {
         buttonState = state
     }
 
